@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+
+import { useDispatch } from 'react-redux';
 import './App.css';
+import BasketBallApp from './store/component/BasketBallApp';
+import { RESET } from './store/countSlice';
 
 function App() {
+  const dispatch = useDispatch()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='App'>
+        <h2>basket ball game</h2>
+        <button className='btn' onClick={()=> dispatch(RESET())}>RESET</button>
+        <BasketBallApp/>
+      </div>
+    </>
   );
 }
 
